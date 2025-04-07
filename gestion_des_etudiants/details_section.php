@@ -18,6 +18,8 @@ if(!$section) {
 }
 
 $etudiants = $etudiantManager->getBySectionId($id);
+$return_page = (isset($_SESSION['user']['role']) && $_SESSION['user']['role']!='user') ? 
+               'liste_sections_admin.php' : 'liste_sections.php';
 ?>
 
 <!DOCTYPE html>
@@ -68,7 +70,7 @@ $etudiants = $etudiantManager->getBySectionId($id);
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <h5><i class="bi bi-collection me-2"></i>Détails de la section</h5>
-                <a href="liste_sections.php" class="btn btn-light btn-sm">
+                <a href="<?= $return_page ?>" class="btn btn-light btn-sm">
                     <i class="bi bi-arrow-left"></i> Retour
                 </a>
             </div>
