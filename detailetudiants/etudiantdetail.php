@@ -1,7 +1,7 @@
 <?php
 require "Connexionbd.php";
 if(!isset($_POST['id'])){
-    header("location:pdo.php");
+    header("location:index.php");
 }
 else{//utulisation du form de page initiale pdo.php
     $id=$_POST['id'];
