@@ -9,6 +9,6 @@ session_unset();
 
 
 
-header("Location: pdoweb.php");
+header("Location: index.php");
 exit();
 ?>

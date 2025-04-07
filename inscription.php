@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require "pdoclasses.php";
 
 if(isset($_SESSION['error'])) {
     echo '<div class="alert alert-danger">'.$_SESSION['error'].'</div>';
@@ -12,7 +13,7 @@ if(isset($_SESSION['success'])) {
 }
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once 'pdoclasses.php'; 
+    require_once 'index.php'; 
     
     $username = htmlspecialchars($_POST['username']);
     $email = htmlspecialchars($_POST['email']);
@@ -151,7 +152,7 @@ if($userManager->createUser($username, $email, $password)) {
             
             <div class="text-center mt-3">
                 <p>Déjà un compte ?</p>
-                <a href="pdoweb.php" class="btn btn-outline-secondary">
+                <a href="index.php" class="btn btn-outline-secondary">
                     <i class="fas fa-sign-in-alt me-2"></i>Se connecter
                 </a>
             </div>
