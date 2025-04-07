@@ -45,7 +45,7 @@ else{//utulisation du form de page initiale pdo.php
                     </ul>
                     
                     <div class="mt-3">
-                        <a href="pdo.php" class="btn btn-secondary">
+                        <a href="index.php" class="btn btn-secondary">
                             Retour
                         </a>
                     </div>
