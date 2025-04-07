@@ -18,6 +18,8 @@ if(!$etudiant) {
 }
 
 $section = $etudiant->getSection();
+$return_page = (isset($_SESSION['user']['role']) && $_SESSION['user']['role']!='user') ? 
+               'liste_etudiants_admin.php' : 'liste_etudiants.php';
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ $section = $etudiant->getSection();
         <div class="card">
             <div  class="card-header bg-info text-white d-flex justify-content-between align-items-center">
                 <h5><i class="bi bi-person-badge me-2"></i>Fiche étudiant</h5>
-                <a href="liste_etudiants.php" class="btn btn-light btn-sm">
+                <a href="<?= $return_page ?>" class="btn btn-light btn-sm">
                     <i class="bi bi-arrow-left"></i> Retour
                 </a>
             </div>
